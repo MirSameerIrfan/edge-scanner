@@ -1,0 +1,311 @@
+
+====================================================================================================
+1. TRADES NEEDED to show mean R > 0 (one-sample z test + Guenther t-correction za^2/2)   [t=0s]
+====================================================================================================
+-- alpha=0.05 one-sided, power=80%
+   SD=1.00R: +0.05R ->   2475  +0.10R ->    620  +0.20R ->    156  +0.30R ->     71
+   SD=1.25R: +0.05R ->   3866  +0.10R ->    968  +0.20R ->    243  +0.30R ->    109
+   SD=1.50R: +0.05R ->   5566  +0.10R ->   1393  +0.20R ->    350  +0.30R ->    156
+-- alpha=0.05 two-sided, power=80%
+   SD=1.00R: +0.05R ->   3142  +0.10R ->    787  +0.20R ->    199  +0.30R ->     90
+   SD=1.25R: +0.05R ->   4908  +0.10R ->   1229  +0.20R ->    309  +0.30R ->    139
+   SD=1.50R: +0.05R ->   7066  +0.10R ->   1768  +0.20R ->    444  +0.30R ->    199
+-- alpha=0.05 one-sided, power=90%
+   SD=1.00R: +0.05R ->   3427  +0.10R ->    858  +0.20R ->    216  +0.30R ->     97
+   SD=1.25R: +0.05R ->   5354  +0.10R ->   1340  +0.20R ->    336  +0.30R ->    151
+   SD=1.50R: +0.05R ->   7709  +0.10R ->   1929  +0.20R ->    484  +0.30R ->    216
+-- alpha=0.005 one-sided (Bonferroni for 10 variants), power=80%
+   SD=1.00R: +0.05R ->   4675  +0.10R ->   1172  +0.20R ->    296  +0.30R ->    134
+   SD=1.25R: +0.05R ->   7303  +0.10R ->   1829  +0.20R ->    460  +0.30R ->    207
+   SD=1.50R: +0.05R ->  10515  +0.10R ->   2632  +0.20R ->    661  +0.30R ->    296
+-- t>=3.0 (HLZ) i.e. alpha=0.00135 one-sided, power=80%
+   SD=1.00R: +0.05R ->   5908  +0.10R ->   1481  +0.20R ->    374  +0.30R ->    169
+   SD=1.25R: +0.05R ->   9229  +0.10R ->   2311  +0.20R ->    581  +0.30R ->    261
+   SD=1.50R: +0.05R ->  13287  +0.10R ->   3326  +0.20R ->    835  +0.30R ->    374
+Binary-payoff SDs (SD = sqrt(p(1-p))*(W+1)):
+   W=1.0: E=+0.00: p=0.500 SD=1.000  E=+0.10: p=0.550 SD=0.995  E=+0.20: p=0.600 SD=0.980  E=+0.30: p=0.650 SD=0.954
+   W=1.2: E=+0.00: p=0.455 SD=1.095  E=+0.10: p=0.500 SD=1.100  E=+0.20: p=0.545 SD=1.095  E=+0.30: p=0.591 SD=1.082
+   W=2.0: E=+0.00: p=0.333 SD=1.414  E=+0.10: p=0.367 SD=1.446  E=+0.20: p=0.400 SD=1.470  E=+0.30: p=0.433 SD=1.487
+   W=3.0: E=+0.00: p=0.250 SD=1.732  E=+0.10: p=0.275 SD=1.786  E=+0.20: p=0.300 SD=1.833  E=+0.30: p=0.325 SD=1.873
+
+====================================================================================================
+2. WHAT n TRADES CAN SHOW (analytic, normal approx)   [t=0s]
+====================================================================================================
+n= 50 SD=1.00: SE=0.141 95%CI=+/-0.277 sig.threshold(mean)=0.233 MDE80=0.352 | power +0.05:0.10 +0.10:0.17 +0.20:0.41 +0.30:0.68 | P(obs mean<0) +0.05:0.36 +0.10:0.24 +0.20:0.08 +0.30:0.02
+n= 50 SD=1.25: SE=0.177 95%CI=+/-0.346 sig.threshold(mean)=0.291 MDE80=0.440 | power +0.05:0.09 +0.10:0.14 +0.20:0.30 +0.30:0.52 | P(obs mean<0) +0.05:0.39 +0.10:0.29 +0.20:0.13 +0.30:0.04
+n= 50 SD=1.50: SE=0.212 95%CI=+/-0.416 sig.threshold(mean)=0.349 MDE80=0.527 | power +0.05:0.08 +0.10:0.12 +0.20:0.24 +0.30:0.41 | P(obs mean<0) +0.05:0.41 +0.10:0.32 +0.20:0.17 +0.30:0.08
+n=100 SD=1.00: SE=0.100 95%CI=+/-0.196 sig.threshold(mean)=0.164 MDE80=0.249 | power +0.05:0.13 +0.10:0.26 +0.20:0.64 +0.30:0.91 | P(obs mean<0) +0.05:0.31 +0.10:0.16 +0.20:0.02 +0.30:0.00
+n=100 SD=1.25: SE=0.125 95%CI=+/-0.245 sig.threshold(mean)=0.206 MDE80=0.311 | power +0.05:0.11 +0.10:0.20 +0.20:0.48 +0.30:0.77 | P(obs mean<0) +0.05:0.34 +0.10:0.21 +0.20:0.05 +0.30:0.01
+n=100 SD=1.50: SE=0.150 95%CI=+/-0.294 sig.threshold(mean)=0.247 MDE80=0.373 | power +0.05:0.09 +0.10:0.16 +0.20:0.38 +0.30:0.64 | P(obs mean<0) +0.05:0.37 +0.10:0.25 +0.20:0.09 +0.30:0.02
+n=200 SD=1.00: SE=0.071 95%CI=+/-0.139 sig.threshold(mean)=0.116 MDE80=0.176 | power +0.05:0.17 +0.10:0.41 +0.20:0.88 +0.30:1.00 | P(obs mean<0) +0.05:0.24 +0.10:0.08 +0.20:0.00 +0.30:0.00
+n=200 SD=1.25: SE=0.088 95%CI=+/-0.173 sig.threshold(mean)=0.145 MDE80=0.220 | power +0.05:0.14 +0.10:0.30 +0.20:0.73 +0.30:0.96 | P(obs mean<0) +0.05:0.29 +0.10:0.13 +0.20:0.01 +0.30:0.00
+n=200 SD=1.50: SE=0.106 95%CI=+/-0.208 sig.threshold(mean)=0.174 MDE80=0.264 | power +0.05:0.12 +0.10:0.24 +0.20:0.60 +0.30:0.88 | P(obs mean<0) +0.05:0.32 +0.10:0.17 +0.20:0.03 +0.30:0.00
+n=300 SD=1.00: SE=0.058 95%CI=+/-0.113 sig.threshold(mean)=0.095 MDE80=0.144 | power +0.05:0.22 +0.10:0.53 +0.20:0.97 +0.30:1.00 | P(obs mean<0) +0.05:0.19 +0.10:0.04 +0.20:0.00 +0.30:0.00
+n=300 SD=1.25: SE=0.072 95%CI=+/-0.141 sig.threshold(mean)=0.119 MDE80=0.179 | power +0.05:0.17 +0.10:0.40 +0.20:0.87 +0.30:0.99 | P(obs mean<0) +0.05:0.24 +0.10:0.08 +0.20:0.00 +0.30:0.00
+n=300 SD=1.50: SE=0.087 95%CI=+/-0.170 sig.threshold(mean)=0.142 MDE80=0.215 | power +0.05:0.14 +0.10:0.31 +0.20:0.75 +0.30:0.97 | P(obs mean<0) +0.05:0.28 +0.10:0.12 +0.20:0.01 +0.30:0.00
+n=500 SD=1.00: SE=0.045 95%CI=+/-0.088 sig.threshold(mean)=0.074 MDE80=0.111 | power +0.05:0.30 +0.10:0.72 +0.20:1.00 +0.30:1.00 | P(obs mean<0) +0.05:0.13 +0.10:0.01 +0.20:0.00 +0.30:0.00
+n=500 SD=1.25: SE=0.056 95%CI=+/-0.110 sig.threshold(mean)=0.092 MDE80=0.139 | power +0.05:0.23 +0.10:0.56 +0.20:0.97 +0.30:1.00 | P(obs mean<0) +0.05:0.19 +0.10:0.04 +0.20:0.00 +0.30:0.00
+n=500 SD=1.50: SE=0.067 95%CI=+/-0.131 sig.threshold(mean)=0.110 MDE80=0.167 | power +0.05:0.18 +0.10:0.44 +0.20:0.91 +0.30:1.00 | P(obs mean<0) +0.05:0.23 +0.10:0.07 +0.20:0.00 +0.30:0.00
+
+====================================================================================================
+3. MONTE CARLO: 10R drawdown & current pass-mark (binary payoffs; costs folded into net payoff); 40k paths   [t=0s]
+====================================================================================================
+
+--- Payoff A (~33-40% winners @ +2R): win +2.0R, loss -1R ---
+E=-0.10 p=0.300 SD=1.37 | N=100: P(peakDD>=10R)=0.944 P(down 10R from start)=0.715 P(final>0)=0.221 PASS(final>0 & DD<10R)=0.052 PASS(start-based stop)=0.182 medDD=20.0 p90DD=33.0 medMaxLossStreak=10 p90Streak=15 | N=200: P(DD>=10R)=0.998 startRuin=0.876 P(final>0)=0.158 PASS=0.002 medDD=32.0 p90DD=52.0 | N=500: P(DD>=10R)=1.000 startRuin=0.975 medDD=65.0
+E=+0.00 p=0.333 SD=1.41 | N=100: P(peakDD>=10R)=0.850 P(down 10R from start)=0.482 P(final>0)=0.482 PASS(final>0 & DD<10R)=0.145 PASS(start-based stop)=0.410 medDD=15.0 p90DD=26.0 medMaxLossStreak=9 p90Streak=13 | N=200: P(DD>=10R)=0.984 startRuin=0.617 P(final>0)=0.506 PASS=0.016 medDD=22.0 p90DD=38.0 | N=500: P(DD>=10R)=1.000 startRuin=0.754 medDD=35.0
+E=+0.05 p=0.350 SD=1.43 | N=100: P(peakDD>=10R)=0.781 P(down 10R from start)=0.364 P(final>0)=0.622 PASS(final>0 & DD<10R)=0.215 PASS(start-based stop)=0.539 medDD=13.0 p90DD=23.0 medMaxLossStreak=9 p90Streak=13 | N=200: P(DD>=10R)=0.961 startRuin=0.463 P(final>0)=0.699 PASS=0.039 medDD=18.0 p90DD=31.0 | N=500: P(DD>=10R)=1.000 startRuin=0.548 medDD=27.0
+E=+0.10 p=0.367 SD=1.45 | N=100: P(peakDD>=10R)=0.704 P(down 10R from start)=0.265 P(final>0)=0.743 PASS(final>0 & DD<10R)=0.292 PASS(start-based stop)=0.659 medDD=12.0 p90DD=20.0 medMaxLossStreak=8 p90Streak=12 | N=200: P(DD>=10R)=0.925 startRuin=0.324 P(final>0)=0.843 PASS=0.075 medDD=16.0 p90DD=27.0 | N=500: P(DD>=10R)=0.999 startRuin=0.362 medDD=22.0
+E=+0.20 p=0.400 SD=1.47 | N=100: P(peakDD>=10R)=0.519 P(down 10R from start)=0.124 P(final>0)=0.911 PASS(final>0 & DD<10R)=0.480 PASS(start-based stop)=0.843 medDD=10.0 p90DD=16.0 medMaxLossStreak=7 p90Streak=11 | N=200: P(DD>=10R)=0.797 startRuin=0.138 P(final>0)=0.976 PASS=0.203 medDD=12.0 p90DD=20.0 | N=500: P(DD>=10R)=0.983 startRuin=0.141 medDD=16.0
+E=+0.30 p=0.433 SD=1.49 | N=100: P(peakDD>=10R)=0.345 P(down 10R from start)=0.051 P(final>0)=0.977 PASS(final>0 & DD<10R)=0.655 PASS(start-based stop)=0.940 medDD=8.0 p90DD=13.0 medMaxLossStreak=7 p90Streak=10 | N=200: P(DD>=10R)=0.595 startRuin=0.053 P(final>0)=0.998 PASS=0.405 medDD=10.0 p90DD=16.0 | N=500: P(DD>=10R)=0.906 startRuin=0.053 medDD=13.0
+
+--- Payoff B (~45-55% winners @ +1.2R): win +1.2R, loss -1R ---
+E=-0.10 p=0.409 SD=1.08 | N=100: P(peakDD>=10R)=0.866 P(down 10R from start)=0.663 P(final>0)=0.175 PASS(final>0 & DD<10R)=0.099 PASS(start-based stop)=0.161 medDD=16.8 p90DD=27.8 medMaxLossStreak=7 p90Streak=11 | N=200: P(DD>=10R)=0.989 startRuin=0.875 P(final>0)=0.106 PASS=0.011 medDD=28.4 p90DD=44.8 | N=500: P(DD>=10R)=1.000 startRuin=0.987 medDD=59.6
+E=+0.00 p=0.455 SD=1.10 | N=100: P(peakDD>=10R)=0.642 P(down 10R from start)=0.344 P(final>0)=0.495 PASS(final>0 & DD<10R)=0.316 PASS(start-based stop)=0.466 medDD=11.6 p90DD=20.4 medMaxLossStreak=6 p90Streak=9 | N=200: P(DD>=10R)=0.898 startRuin=0.504 P(final>0)=0.525 PASS=0.101 medDD=16.8 p90DD=29.4 | N=500: P(DD>=10R)=0.998 startRuin=0.671 medDD=27.2
+E=+0.05 p=0.477 SD=1.10 | N=100: P(peakDD>=10R)=0.501 P(down 10R from start)=0.210 P(final>0)=0.671 PASS(final>0 & DD<10R)=0.464 PASS(start-based stop)=0.641 medDD=10.0 p90DD=17.2 medMaxLossStreak=6 p90Streak=9 | N=200: P(DD>=10R)=0.788 startRuin=0.302 P(final>0)=0.757 PASS=0.211 medDD=13.6 p90DD=23.2 | N=500: P(DD>=10R)=0.983 startRuin=0.378 medDD=19.6
+E=+0.10 p=0.500 SD=1.10 | N=100: P(peakDD>=10R)=0.364 P(down 10R from start)=0.121 P(final>0)=0.818 PASS(final>0 & DD<10R)=0.615 PASS(start-based stop)=0.788 medDD=8.6 p90DD=14.8 medMaxLossStreak=6 p90Streak=8 | N=200: P(DD>=10R)=0.638 startRuin=0.157 P(final>0)=0.912 PASS=0.362 medDD=11.4 p90DD=18.8 | N=500: P(DD>=10R)=0.933 startRuin=0.177 medDD=15.4
+E=+0.20 p=0.545 SD=1.10 | N=100: P(peakDD>=10R)=0.158 P(down 10R from start)=0.029 P(final>0)=0.966 PASS(final>0 & DD<10R)=0.836 PASS(start-based stop)=0.951 medDD=6.8 p90DD=11.0 medMaxLossStreak=5 p90Streak=7 | N=200: P(DD>=10R)=0.315 startRuin=0.032 P(final>0)=0.996 PASS=0.685 medDD=8.4 p90DD=13.2 | N=500: P(DD>=10R)=0.640 startRuin=0.032 medDD=11.0
+E=+0.30 p=0.591 SD=1.08 | N=100: P(peakDD>=10R)=0.051 P(down 10R from start)=0.006 P(final>0)=0.997 PASS(final>0 & DD<10R)=0.949 PASS(start-based stop)=0.993 medDD=5.6 p90DD=8.6 medMaxLossStreak=4 p90Streak=7 | N=200: P(DD>=10R)=0.111 startRuin=0.006 P(final>0)=1.000 PASS=0.889 medDD=6.8 p90DD=10.0 | N=500: P(DD>=10R)=0.266 startRuin=0.006 medDD=8.4
+
+--- Payoff C (~25-33% winners @ +3R): win +3.0R, loss -1R ---
+E=-0.10 p=0.225 SD=1.67 | N=100: P(peakDD>=10R)=0.979 P(down 10R from start)=0.742 P(final>0)=0.231 PASS(final>0 & DD<10R)=0.021 PASS(start-based stop)=0.172 medDD=23.0 p90DD=38.0 medMaxLossStreak=13 p90Streak=20 | N=200: P(DD>=10R)=1.000 startRuin=0.876 P(final>0)=0.176 PASS=0.000 medDD=36.0 p90DD=59.0 | N=500: P(DD>=10R)=1.000 startRuin=0.969 medDD=71.0
+E=+0.00 p=0.250 SD=1.73 | N=100: P(peakDD>=10R)=0.943 P(down 10R from start)=0.560 P(final>0)=0.449 PASS(final>0 & DD<10R)=0.056 PASS(start-based stop)=0.348 medDD=18.0 p90DD=31.0 medMaxLossStreak=12 p90Streak=18 | N=200: P(DD>=10R)=0.998 startRuin=0.682 P(final>0)=0.465 PASS=0.002 medDD=26.0 p90DD=45.0 | N=500: P(DD>=10R)=1.000 startRuin=0.793 medDD=43.0
+E=+0.05 p=0.263 SD=1.76 | N=100: P(peakDD>=10R)=0.917 P(down 10R from start)=0.468 P(final>0)=0.559 PASS(final>0 & DD<10R)=0.083 PASS(start-based stop)=0.445 medDD=16.0 p90DD=28.0 medMaxLossStreak=11 p90Streak=17 | N=200: P(DD>=10R)=0.994 startRuin=0.566 P(final>0)=0.621 PASS=0.006 medDD=23.0 p90DD=40.0 | N=500: P(DD>=10R)=1.000 startRuin=0.652 medDD=35.0
+E=+0.10 p=0.275 SD=1.79 | N=100: P(peakDD>=10R)=0.884 P(down 10R from start)=0.382 P(final>0)=0.667 PASS(final>0 & DD<10R)=0.116 PASS(start-based stop)=0.544 medDD=15.0 p90DD=26.0 medMaxLossStreak=11 p90Streak=16 | N=200: P(DD>=10R)=0.988 startRuin=0.452 P(final>0)=0.761 PASS=0.012 medDD=20.0 p90DD=35.0 | N=500: P(DD>=10R)=1.000 startRuin=0.502 medDD=29.0
+E=+0.20 p=0.300 SD=1.83 | N=100: P(peakDD>=10R)=0.788 P(down 10R from start)=0.242 P(final>0)=0.837 PASS(final>0 & DD<10R)=0.212 PASS(start-based stop)=0.717 medDD=13.0 p90DD=22.0 medMaxLossStreak=10 p90Streak=15 | N=200: P(DD>=10R)=0.962 startRuin=0.268 P(final>0)=0.930 PASS=0.038 medDD=17.0 p90DD=27.0 | N=500: P(DD>=10R)=1.000 startRuin=0.278 medDD=22.0
+E=+0.30 p=0.325 SD=1.87 | N=100: P(peakDD>=10R)=0.670 P(down 10R from start)=0.139 P(final>0)=0.935 PASS(final>0 & DD<10R)=0.329 PASS(start-based stop)=0.841 medDD=11.0 p90DD=18.0 medMaxLossStreak=9 p90Streak=14 | N=200: P(DD>=10R)=0.905 startRuin=0.147 P(final>0)=0.988 PASS=0.095 medDD=14.0 p90DD=22.0 | N=500: P(DD>=10R)=0.998 startRuin=0.148 medDD=18.0
+
+====================================================================================================
+4. ZERO GROSS EDGE + COSTS (every trade shifted by -c): chance of 'profitable after costs' over 100 trades   [t=45s]
+====================================================================================================
+W=2.0 cost=0.00R/trade: P(final>0)=0.483 (normal approx 0.500) PASS(final>0 & peakDD<10R)=0.142 P(peakDD>=10R)=0.853 P(down10R from start)=0.477
+W=2.0 cost=0.05R/trade: P(final>0)=0.320 (normal approx 0.362) PASS(final>0 & peakDD<10R)=0.100 P(peakDD>=10R)=0.891 P(down10R from start)=0.582
+W=2.0 cost=0.10R/trade: P(final>0)=0.248 (normal approx 0.240) PASS(final>0 & peakDD<10R)=0.057 P(peakDD>=10R)=0.940 P(down10R from start)=0.704
+W=2.0 cost=0.15R/trade: P(final>0)=0.138 (normal approx 0.144) PASS(final>0 & peakDD<10R)=0.029 P(peakDD>=10R)=0.968 P(down10R from start)=0.807
+W=2.0 cost=0.20R/trade: P(final>0)=0.066 (normal approx 0.079) PASS(final>0 & peakDD<10R)=0.013 P(peakDD>=10R)=0.984 P(down10R from start)=0.878
+W=2.0 cost=0.25R/trade: P(final>0)=0.045 (normal approx 0.039) PASS(final>0 & peakDD<10R)=0.006 P(peakDD>=10R)=0.993 P(down10R from start)=0.934
+W=1.2 cost=0.00R/trade: P(final>0)=0.493 (normal approx 0.500) PASS(final>0 & peakDD<10R)=0.320 P(peakDD>=10R)=0.638 P(down10R from start)=0.343
+W=1.2 cost=0.05R/trade: P(final>0)=0.337 (normal approx 0.324) PASS(final>0 & peakDD<10R)=0.198 P(peakDD>=10R)=0.763 P(down10R from start)=0.504
+W=1.2 cost=0.10R/trade: P(final>0)=0.156 (normal approx 0.181) PASS(final>0 & peakDD<10R)=0.103 P(peakDD>=10R)=0.837 P(down10R from start)=0.642
+W=1.2 cost=0.15R/trade: P(final>0)=0.077 (normal approx 0.085) PASS(final>0 & peakDD<10R)=0.042 P(peakDD>=10R)=0.931 P(down10R from start)=0.803
+W=1.2 cost=0.20R/trade: P(final>0)=0.036 (normal approx 0.034) PASS(final>0 & peakDD<10R)=0.018 P(peakDD>=10R)=0.970 P(down10R from start)=0.901
+W=1.2 cost=0.25R/trade: P(final>0)=0.014 (normal approx 0.011) PASS(final>0 & peakDD<10R)=0.007 P(peakDD>=10R)=0.988 P(down10R from start)=0.955
+W=3.0 cost=0.00R/trade: P(final>0)=0.447 (normal approx 0.500) PASS(final>0 & peakDD<10R)=0.055 P(peakDD>=10R)=0.945 P(down10R from start)=0.560
+W=3.0 cost=0.05R/trade: P(final>0)=0.364 (normal approx 0.386) PASS(final>0 & peakDD<10R)=0.043 P(peakDD>=10R)=0.957 P(down10R from start)=0.634
+W=3.0 cost=0.10R/trade: P(final>0)=0.279 (normal approx 0.282) PASS(final>0 & peakDD<10R)=0.024 P(peakDD>=10R)=0.976 P(down10R from start)=0.739
+W=3.0 cost=0.15R/trade: P(final>0)=0.208 (normal approx 0.193) PASS(final>0 & peakDD<10R)=0.013 P(peakDD>=10R)=0.986 P(down10R from start)=0.810
+W=3.0 cost=0.20R/trade: P(final>0)=0.106 (normal approx 0.124) PASS(final>0 & peakDD<10R)=0.006 P(peakDD>=10R)=0.994 P(down10R from start)=0.869
+W=3.0 cost=0.25R/trade: P(final>0)=0.069 (normal approx 0.074) PASS(final>0 & peakDD<10R)=0.003 P(peakDD>=10R)=0.997 P(down10R from start)=0.917
+
+====================================================================================================
+5. MULTIPLE TESTING   [t=53s]
+====================================================================================================
+K | E[max of K N(0,1)] numeric, BLdP approx | Bonferroni z(0.05/K) | luck: best-of-K zero-edge mean R (SD1.25) at n=100/300/1000 | n for 80% power at 0.05/K for +0.1/+0.2/+0.3R (SD1.25) | P(>=1 of K indep zero-edge setups passes current rule): net-zero A, zero-gross+0.1R cost A, zero-gross+0.1R cost B
+K=    1: Emax=0.000/0.000  zBonf=1.645  luck=0.000/0.000/0.000R  n80=[968, 243, 109]  P(any passes)=0.145/0.057/0.103
+K=    2: Emax=0.564/0.520  zBonf=1.960  luck=0.071/0.041/0.022R  n80=[1229, 309, 139]  P(any passes)=0.268/0.111/0.196
+K=    3: Emax=0.846/0.853  zBonf=2.128  luck=0.106/0.061/0.033R  n80=[1381, 347, 156]  P(any passes)=0.374/0.162/0.279
+K=    5: Emax=1.163/1.193  zBonf=2.326  luck=0.145/0.084/0.046R  n80=[1571, 395, 177]  P(any passes)=0.542/0.256/0.421
+K=   10: Emax=1.539/1.575  zBonf=2.576  luck=0.192/0.111/0.061R  n80=[1829, 460, 207]  P(any passes)=0.790/0.446/0.665
+K=   20: Emax=1.867/1.901  zBonf=2.807  luck=0.233/0.135/0.074R  n80=[2085, 524, 236]  P(any passes)=0.956/0.693/0.887
+K=   50: Emax=2.249/2.276  zBonf=3.090  luck=0.281/0.162/0.089R  n80=[2421, 609, 274]  P(any passes)=1.000/0.948/0.996
+K=  100: Emax=2.508/2.531  zBonf=3.291  luck=0.313/0.181/0.099R  n80=[2674, 673, 302]  P(any passes)=1.000/0.997/1.000
+K=  200: Emax=2.746/2.766  zBonf=3.481  luck=0.343/0.198/0.109R  n80=[2926, 736, 331]  P(any passes)=1.000/1.000/1.000
+K= 1000: Emax=3.255/3.255  zBonf=3.891  luck=0.407/0.235/0.129R  n80=[3507, 883, 397]  P(any passes)=1.000/1.000/1.000
+
+Number of independent variants K at which the BEST zero-edge variant is EXPECTED to show mean >= m (SD 1.25R), by trades per variant T:
+   T=  100: m=+0.05R -> K=2, m=+0.10R -> K=3, m=+0.15R -> K=6, m=+0.20R -> K=12
+   T=  200: m=+0.05R -> K=3, m=+0.10R -> K=5, m=+0.15R -> K=14, m=+0.20R -> K=52
+   T=  300: m=+0.05R -> K=3, m=+0.10R -> K=8, m=+0.15R -> K=33, m=+0.20R -> K=205
+   T=  500: m=+0.05R -> K=4, m=+0.10R -> K=17, m=+0.15R -> K=166, m=+0.20R -> K=3313
+   T= 1000: m=+0.05R -> K=6, m=+0.10R -> K=107, m=+0.15R -> K=7792, m=+0.20R -> K=2692217
+   T= 2000: m=+0.05R -> K=17, m=+0.10R -> K=3313, m=+0.15R -> K=14207832, m=+0.20R -> K=1003611227
+   T= 5000: m=+0.05R -> K=245, m=+0.10R -> K=73509367, m=+0.15R -> K=1003611227, m=+0.20R -> K=1003611227
+
+====================================================================================================
+6. PSR / DSR / MinTRL examples (per-trade Sharpe SR = mean R / SD R), payoff A; DSR uses V[SR]=1/T null proxy   [t=54s]
+====================================================================================================
+Payoff A observed E=+0.10: SR/trade=0.069 skew=0.55 kurt=1.31 MinTRL(95%, SR*=0)=545 trades
+   T=100: PSR(0)=0.759  DSR for N trials 1/5/10/20/50/100 = 0.759 0.306 0.185 0.110 0.054 0.031
+   T=200: PSR(0)=0.840  DSR for N trials 1/5/10/20/50/100 = 0.840 0.414 0.272 0.174 0.093 0.057
+   T=400: PSR(0)=0.921  DSR for N trials 1/5/10/20/50/100 = 0.921 0.577 0.423 0.299 0.182 0.121
+   T=1000: PSR(0)=0.987  DSR for N trials 1/5/10/20/50/100 = 0.987 0.845 0.734 0.615 0.464 0.363
+Payoff A observed E=+0.15: SR/trade=0.103 skew=0.48 kurt=1.23 MinTRL(95%, SR*=0)=244 trades
+   T=100: PSR(0)=0.853  DSR for N trials 1/5/10/20/50/100 = 0.853 0.433 0.289 0.187 0.101 0.063
+   T=200: PSR(0)=0.932  DSR for N trials 1/5/10/20/50/100 = 0.932 0.606 0.451 0.324 0.200 0.136
+   T=400: PSR(0)=0.982  DSR for N trials 1/5/10/20/50/100 = 0.982 0.812 0.689 0.563 0.411 0.314
+   T=1000: PSR(0)=1.000  DSR for N trials 1/5/10/20/50/100 = 1.000 0.983 0.957 0.917 0.841 0.770
+Payoff A observed E=+0.20: SR/trade=0.136 skew=0.41 kurt=1.17 MinTRL(95%, SR*=0)=139 trades
+   T=100: PSR(0)=0.918  DSR for N trials 1/5/10/20/50/100 = 0.918 0.568 0.413 0.290 0.174 0.116
+   T=200: PSR(0)=0.976  DSR for N trials 1/5/10/20/50/100 = 0.976 0.774 0.640 0.510 0.359 0.267
+   T=400: PSR(0)=0.997  DSR for N trials 1/5/10/20/50/100 = 0.997 0.942 0.881 0.800 0.676 0.578
+   T=1000: PSR(0)=1.000  DSR for N trials 1/5/10/20/50/100 = 1.000 0.999 0.997 0.993 0.981 0.966
+Payoff A observed E=+0.30: SR/trade=0.202 skew=0.27 kurt=1.07 MinTRL(95%, SR*=0)=64 trades
+   T=100: PSR(0)=0.980  DSR for N trials 1/5/10/20/50/100 = 0.980 0.801 0.675 0.548 0.396 0.300
+   T=200: PSR(0)=0.998  DSR for N trials 1/5/10/20/50/100 = 0.998 0.956 0.905 0.836 0.723 0.630
+   T=400: PSR(0)=1.000  DSR for N trials 1/5/10/20/50/100 = 1.000 0.998 0.994 0.986 0.965 0.939
+   T=1000: PSR(0)=1.000  DSR for N trials 1/5/10/20/50/100 = 1.000 1.000 1.000 1.000 1.000 1.000
+
+====================================================================================================
+7. PEEKING: naive repeated one-sided t-test (t>=1.645) under ZERO net edge (false-positive rate)   [t=54s]
+====================================================================================================
+W=2.0: one look at n=100: 0.043 | look every 25 trades (25..300): 0.163 | every trade 30..100: 0.154 | every trade 20..300: 0.245
+W=1.2: one look at n=100: 0.053 | look every 25 trades (25..300): 0.177 | every trade 30..100: 0.168 | every trade 20..300: 0.270
+
+====================================================================================================
+8. SPRT (Wald) on per-trade net R: H0 mu=0 vs H1 mu=d1; alpha=0.05, beta=0.20; min n=50, max n=300; 10R peak DD stop   [t=60s]
+====================================================================================================
+
+Payoff A (~33-40% winners @ +2R), d1=0.15, sigma=1.459: PASS when cumR >= 39.32 + 0.075*n (n>=50); FAIL when cumR <= -22.10 + 0.075*n; Wald ASN (untruncated) H1=361, H0=254; fixed-n equivalent=586
+   true E=-0.10: PASS=0.001 FAIL(H0)=0.000 DDstop=0.999 undecided@300=0.000 avg trades=43
+   true E=+0.00: PASS=0.007 FAIL(H0)=0.000 DDstop=0.992 undecided@300=0.001 avg trades=58
+   true E=+0.05: PASS=0.024 FAIL(H0)=0.000 DDstop=0.974 undecided@300=0.003 avg trades=68
+   true E=+0.10: PASS=0.063 FAIL(H0)=0.000 DDstop=0.932 undecided@300=0.005 avg trades=79
+   true E=+0.15: PASS=0.139 FAIL(H0)=0.000 DDstop=0.855 undecided@300=0.007 avg trades=90
+   true E=+0.20: PASS=0.240 FAIL(H0)=0.000 DDstop=0.755 undecided@300=0.006 avg trades=98
+   true E=+0.30: PASS=0.521 FAIL(H0)=0.000 DDstop=0.476 undecided@300=0.002 avg trades=105
+
+Payoff A (~33-40% winners @ +2R), d1=0.2, sigma=1.470: PASS when cumR >= 29.94 + 0.100*n (n>=50); FAIL when cumR <= -16.83 + 0.100*n; Wald ASN (untruncated) H1=206, H0=145; fixed-n equivalent=336
+   true E=-0.10: PASS=0.002 FAIL(H0)=0.003 DDstop=0.995 undecided@300=0.000 avg trades=43
+   true E=+0.00: PASS=0.016 FAIL(H0)=0.003 DDstop=0.980 undecided@300=0.001 avg trades=58
+   true E=+0.05: PASS=0.041 FAIL(H0)=0.002 DDstop=0.955 undecided@300=0.002 avg trades=66
+   true E=+0.10: PASS=0.095 FAIL(H0)=0.001 DDstop=0.899 undecided@300=0.004 avg trades=76
+   true E=+0.15: PASS=0.191 FAIL(H0)=0.001 DDstop=0.804 undecided@300=0.004 avg trades=85
+   true E=+0.20: PASS=0.302 FAIL(H0)=0.001 DDstop=0.693 undecided@300=0.004 avg trades=90
+   true E=+0.30: PASS=0.577 FAIL(H0)=0.000 DDstop=0.422 undecided@300=0.001 avg trades=92
+
+Payoff B (~45-55% winners @ +1.2R), d1=0.15, sigma=1.099: PASS when cumR >= 22.32 + 0.075*n (n>=50); FAIL when cumR <= -12.54 + 0.075*n; Wald ASN (untruncated) H1=205, H0=144; fixed-n equivalent=334
+   true E=-0.10: PASS=0.001 FAIL(H0)=0.126 DDstop=0.872 undecided@300=0.001 avg trades=57
+   true E=+0.00: PASS=0.029 FAIL(H0)=0.107 DDstop=0.846 undecided@300=0.018 avg trades=91
+   true E=+0.05: PASS=0.103 FAIL(H0)=0.081 DDstop=0.772 undecided@300=0.043 avg trades=114
+   true E=+0.10: PASS=0.260 FAIL(H0)=0.046 DDstop=0.628 undecided@300=0.065 avg trades=132
+   true E=+0.15: PASS=0.496 FAIL(H0)=0.021 DDstop=0.430 undecided@300=0.053 avg trades=137
+   true E=+0.20: PASS=0.714 FAIL(H0)=0.008 DDstop=0.254 undecided@300=0.024 avg trades=128
+   true E=+0.30: PASS=0.940 FAIL(H0)=0.001 DDstop=0.058 undecided@300=0.001 avg trades=96
+
+Payoff B (~45-55% winners @ +1.2R), d1=0.2, sigma=1.095: PASS when cumR >= 16.64 + 0.100*n (n>=50); FAIL when cumR <= -9.35 + 0.100*n; Wald ASN (untruncated) H1=114, H0=80; fixed-n equivalent=187
+   true E=-0.10: PASS=0.002 FAIL(H0)=0.711 DDstop=0.287 undecided@300=0.000 avg trades=46
+   true E=+0.00: PASS=0.038 FAIL(H0)=0.562 DDstop=0.392 undecided@300=0.008 avg trades=74
+   true E=+0.05: PASS=0.114 FAIL(H0)=0.456 DDstop=0.408 undecided@300=0.022 avg trades=92
+   true E=+0.10: PASS=0.268 FAIL(H0)=0.320 DDstop=0.372 undecided@300=0.040 avg trades=109
+   true E=+0.15: PASS=0.482 FAIL(H0)=0.202 DDstop=0.281 undecided@300=0.035 avg trades=114
+   true E=+0.20: PASS=0.703 FAIL(H0)=0.109 DDstop=0.171 undecided@300=0.017 avg trades=108
+   true E=+0.30: PASS=0.929 FAIL(H0)=0.025 DDstop=0.044 undecided@300=0.001 avg trades=83
+
+====================================================================================================
+9. BAYESIAN posterior P(edge>0) with prior N(m0, tau^2) == adding n0 = sigma^2/tau^2 phantom trades at m0   [t=68s]
+====================================================================================================
+-- prior: flat  (SD 1.25R)
+   n=50: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.714 0.871 0.955
+   n=100: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.788 0.945 0.992
+   n=200: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.871 0.988 1.000
+   n=300: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.917 0.997 1.000
+   n=500: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.963 1.000 1.000
+-- prior: N(0,0.2^2) -> n0=39 phantom zero-R trades  (SD 1.25R)
+   n=50: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.664 0.802 0.898
+   n=100: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.751 0.913 0.979
+   n=200: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.850 0.981 0.999
+   n=300: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.904 0.995 1.000
+   n=500: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.958 1.000 1.000
+-- prior: N(0,0.15^2) -> n0=69 phantom zero-R trades  (SD 1.25R)
+   n=50: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.643 0.768 0.864
+   n=100: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.731 0.890 0.967
+   n=200: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.835 0.974 0.998
+   n=300: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.894 0.994 1.000
+   n=500: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.953 1.000 1.000
+-- prior: N(0,0.1^2) -> n0=156 phantom zero-R trades  (SD 1.25R)
+   n=50: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.610 0.711 0.798
+   n=100: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.691 0.841 0.933
+   n=200: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.802 0.955 0.995
+   n=300: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.869 0.988 1.000
+   n=500: observed mean +0.1/+0.2/+0.3R -> P(mu>0|data)= 0.941 0.999 1.000
+
+Sequential Bayesian rule: check after every trade from n=50; PASS if P(mu>0)>=0.95, FAIL if <=0.10, 10R DD stop, max 300 trades
+Payoff A (~33-40% winners @ +2R) sigma=1.47 prior=flat
+   true E=-0.10: PASS=0.034 FAIL=0.000 DDstop=0.966 undecided@300=0.000 avg trades=41
+   true E=+0.00: PASS=0.123 FAIL=0.000 DDstop=0.877 undecided@300=0.000 avg trades=51
+   true E=+0.10: PASS=0.309 FAIL=0.000 DDstop=0.690 undecided@300=0.001 avg trades=60
+   true E=+0.20: PASS=0.541 FAIL=0.000 DDstop=0.459 undecided@300=0.001 avg trades=62
+   true E=+0.30: PASS=0.742 FAIL=0.000 DDstop=0.258 undecided@300=0.000 avg trades=58
+Payoff A (~33-40% winners @ +2R) sigma=1.47 prior=N(0,0.15^2), n0=96
+   true E=-0.10: PASS=0.005 FAIL=0.000 DDstop=0.995 undecided@300=0.000 avg trades=42
+   true E=+0.00: PASS=0.037 FAIL=0.000 DDstop=0.963 undecided@300=0.000 avg trades=56
+   true E=+0.10: PASS=0.161 FAIL=0.000 DDstop=0.838 undecided@300=0.002 avg trades=71
+   true E=+0.20: PASS=0.388 FAIL=0.000 DDstop=0.611 undecided@300=0.001 avg trades=80
+   true E=+0.30: PASS=0.642 FAIL=0.000 DDstop=0.358 undecided@300=0.000 avg trades=79
+Payoff A (~33-40% winners @ +2R) sigma=1.47 prior=N(0,0.1^2), n0=216
+   true E=-0.10: PASS=0.001 FAIL=0.000 DDstop=0.999 undecided@300=0.000 avg trades=43
+   true E=+0.00: PASS=0.012 FAIL=0.000 DDstop=0.988 undecided@300=0.001 avg trades=57
+   true E=+0.10: PASS=0.089 FAIL=0.000 DDstop=0.907 undecided@300=0.003 avg trades=78
+   true E=+0.20: PASS=0.287 FAIL=0.000 DDstop=0.710 undecided@300=0.003 avg trades=94
+   true E=+0.30: PASS=0.553 FAIL=0.000 DDstop=0.446 undecided@300=0.001 avg trades=96
+Payoff B (~45-55% winners @ +1.2R) sigma=1.10 prior=flat
+   true E=-0.10: PASS=0.029 FAIL=0.000 DDstop=0.971 undecided@300=0.001 avg trades=57
+   true E=+0.00: PASS=0.173 FAIL=0.000 DDstop=0.817 undecided@300=0.010 avg trades=81
+   true E=+0.10: PASS=0.533 FAIL=0.000 DDstop=0.455 undecided@300=0.013 avg trades=90
+   true E=+0.20: PASS=0.845 FAIL=0.000 DDstop=0.153 undecided@300=0.002 avg trades=75
+   true E=+0.30: PASS=0.964 FAIL=0.000 DDstop=0.036 undecided@300=0.000 avg trades=59
+Payoff B (~45-55% winners @ +1.2R) sigma=1.10 prior=N(0,0.15^2), n0=53
+   true E=-0.10: PASS=0.010 FAIL=0.000 DDstop=0.990 undecided@300=0.001 avg trades=58
+   true E=+0.00: PASS=0.101 FAIL=0.000 DDstop=0.887 undecided@300=0.012 avg trades=87
+   true E=+0.10: PASS=0.432 FAIL=0.000 DDstop=0.546 undecided@300=0.022 avg trades=108
+   true E=+0.20: PASS=0.810 FAIL=0.000 DDstop=0.186 undecided@300=0.004 avg trades=93
+   true E=+0.30: PASS=0.953 FAIL=0.000 DDstop=0.047 undecided@300=0.000 avg trades=71
+Payoff B (~45-55% winners @ +1.2R) sigma=1.10 prior=N(0,0.1^2), n0=120
+   true E=-0.10: PASS=0.003 FAIL=0.000 DDstop=0.996 undecided@300=0.001 avg trades=59
+   true E=+0.00: PASS=0.057 FAIL=0.000 DDstop=0.928 undecided@300=0.015 avg trades=92
+   true E=+0.10: PASS=0.347 FAIL=0.000 DDstop=0.617 undecided@300=0.036 avg trades=123
+   true E=+0.20: PASS=0.765 FAIL=0.000 DDstop=0.226 undecided@300=0.009 avg trades=113
+   true E=+0.30: PASS=0.946 FAIL=0.000 DDstop=0.054 undecided@300=0.000 avg trades=85
+
+====================================================================================================
+10. FILTER COMPARISONS (taken vs skipped; model vs trader) - analytic   [t=74s]
+====================================================================================================
+Total flags so that 'taken minus skipped' difference D is detected (one-sided 0.05, 80% power), SD 1.25R; uplift vs ALL flags = (1-f)*D
+   take-rate f=0.2: D=0.1R -> 6038  D=0.2R -> 1510  D=0.3R -> 671  D=0.5R -> 242
+   take-rate f=0.3: D=0.1R -> 4601  D=0.2R -> 1151  D=0.3R -> 512  D=0.5R -> 185
+   take-rate f=0.5: D=0.1R -> 3865  D=0.2R -> 967  D=0.3R -> 430  D=0.5R -> 155
+   take-rate f=0.7: D=0.1R -> 4601  D=0.2R -> 1151  D=0.3R -> 512  D=0.5R -> 185
+Paired model-vs-trader: discordant flags needed for mean advantage dd per discordant flag (SD 1.25R)
+   dd=0.1: 968 discordant flags -> total flags if they disagree on 20%/40% of flags: 4840 / 2420
+   dd=0.2: 243 discordant flags -> total flags if they disagree on 20%/40% of flags: 1215 / 608
+   dd=0.3: 109 discordant flags -> total flags if they disagree on 20%/40% of flags: 545 / 273
+   dd=0.5: 40 discordant flags -> total flags if they disagree on 20%/40% of flags: 200 / 100
+Precision of a scoreboard line with n trades (SD 1.25R):
+   n=100: SE=0.125R, 95% CI half-width=0.25R
+   n=60: SE=0.161R, 95% CI half-width=0.32R
+   n=50: SE=0.177R, 95% CI half-width=0.35R
+   n=30: SE=0.228R, 95% CI half-width=0.45R
+   n=20: SE=0.280R, 95% CI half-width=0.55R
+
+====================================================================================================
+11. Closed form: P(cum R hits -D within n) for Brownian motion with drift (with/without 0.5826*sigma discreteness correction) vs MC   [t=74s]
+====================================================================================================
+W=2.0 E=+0.00 n=100: closed form raw=0.480 corrected=0.444 MC=0.482
+W=2.0 E=+0.00 n=200: closed form raw=0.617 corrected=0.588 MC=0.617
+W=2.0 E=+0.00 n=500: closed form raw=0.752 corrected=0.732 MC=0.754
+W=2.0 E=+0.10 n=100: closed form raw=0.275 corrected=0.244 MC=0.265
+W=2.0 E=+0.10 n=200: closed form raw=0.335 corrected=0.304 MC=0.324
+W=2.0 E=+0.10 n=500: closed form raw=0.374 corrected=0.344 MC=0.362 | infinite-horizon exp(-2*mu*D'/s^2)=0.354
+W=2.0 E=+0.20 n=100: closed form raw=0.139 corrected=0.116 MC=0.124
+W=2.0 E=+0.20 n=200: closed form raw=0.153 corrected=0.130 MC=0.138
+W=2.0 E=+0.20 n=500: closed form raw=0.157 corrected=0.134 MC=0.141 | infinite-horizon exp(-2*mu*D'/s^2)=0.134
+W=1.2 E=+0.00 n=100: closed form raw=0.361 corrected=0.331 MC=0.344
+W=1.2 E=+0.00 n=200: closed form raw=0.519 corrected=0.492 MC=0.504
+W=1.2 E=+0.00 n=500: closed form raw=0.683 corrected=0.664 MC=0.671
+W=1.2 E=+0.10 n=100: closed form raw=0.130 corrected=0.112 MC=0.121
+W=1.2 E=+0.10 n=200: closed form raw=0.169 corrected=0.150 MC=0.157
+W=1.2 E=+0.10 n=500: closed form raw=0.189 corrected=0.170 MC=0.177 | infinite-horizon exp(-2*mu*D'/s^2)=0.172
+W=1.2 E=+0.20 n=100: closed form raw=0.032 corrected=0.026 MC=0.029
+W=1.2 E=+0.20 n=200: closed form raw=0.035 corrected=0.029 MC=0.032
+W=1.2 E=+0.20 n=500: closed form raw=0.036 corrected=0.029 MC=0.032 | infinite-horizon exp(-2*mu*D'/s^2)=0.029
+W=3.0 E=+0.00 n=100: closed form raw=0.564 corrected=0.525 MC=0.560
+W=3.0 E=+0.00 n=200: closed form raw=0.683 corrected=0.653 MC=0.682
+W=3.0 E=+0.00 n=500: closed form raw=0.796 corrected=0.776 MC=0.793
+W=3.0 E=+0.10 n=100: closed form raw=0.399 corrected=0.358 MC=0.382
+W=3.0 E=+0.10 n=200: closed form raw=0.467 corrected=0.429 MC=0.452
+W=3.0 E=+0.10 n=500: closed form raw=0.516 corrected=0.481 MC=0.502 | infinite-horizon exp(-2*mu*D'/s^2)=0.500
+W=3.0 E=+0.20 n=100: closed form raw=0.266 corrected=0.229 MC=0.242
+W=3.0 E=+0.20 n=200: closed form raw=0.293 corrected=0.257 MC=0.268
+W=3.0 E=+0.20 n=500: closed form raw=0.303 corrected=0.267 MC=0.278 | infinite-horizon exp(-2*mu*D'/s^2)=0.268
+
+DONE in 74s

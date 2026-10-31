@@ -1,0 +1,119 @@
+
+====================================================================================================
+A. ROUND-TRIP COST IN R (1R = Rs200). Rate card ASSUMED (Zerodha, as recalled; verify on zerodha.com/charges)   [t=0s]
+====================================================================================================
+Equity intraday (MIS): notional = Rs200 / stop%  | statutory+brokerage cost | + slippage 0.02%/side | + slippage 0.05%/side
+   stop 0.30% -> notional Rs66,667 (lev 3.3x on Rs20k): fees Rs70.7 = 0.353R | +slip2bp 0.487R | +slip5bp 0.687R
+   stop 0.50% -> notional Rs40,000 (lev 2.0x on Rs20k): fees Rs42.4 = 0.212R | +slip2bp 0.292R | +slip5bp 0.412R
+   stop 0.75% -> notional Rs26,667 (lev 1.3x on Rs20k): fees Rs28.3 = 0.141R | +slip2bp 0.195R | +slip5bp 0.275R
+   stop 1.00% -> notional Rs20,000 (lev 1.0x on Rs20k): fees Rs21.2 = 0.106R | +slip2bp 0.146R | +slip5bp 0.206R
+   stop 1.50% -> notional Rs13,333 (lev 0.7x on Rs20k): fees Rs14.1 = 0.071R | +slip2bp 0.097R | +slip5bp 0.137R
+   stop 2.00% -> notional Rs10,000 (lev 0.5x on Rs20k): fees Rs10.6 = 0.053R | +slip2bp 0.073R | +slip5bp 0.103R
+Equity delivery/swing (CNC): notional = Rs200 / stop% | fees incl. ~Rs15.34 DP charge | + slippage 0.05%/side
+   stop 2% -> notional Rs10,000: fees Rs37.6 = 0.188R | +slip5bp 0.238R
+   stop 3% -> notional Rs6,667: fees Rs30.2 = 0.151R | +slip5bp 0.184R
+   stop 5% -> notional Rs4,000: fees Rs24.2 = 0.121R | +slip5bp 0.141R
+   stop 8% -> notional Rs2,500: fees Rs20.9 = 0.104R | +slip5bp 0.117R
+   stop 10% -> notional Rs2,000: fees Rs19.8 = 0.099R | +slip5bp 0.109R
+Index/stock options bought (flat Rs20/order): premium turnover per side
+   premium Rs2,000 per side: fees Rs50.9 = 0.255R (brokerage alone 0.200R)
+   premium Rs5,000 per side: fees Rs56.5 = 0.282R (brokerage alone 0.200R)
+   premium Rs7,500 per side: fees Rs61.1 = 0.306R (brokerage alone 0.200R)
+   premium Rs10,000 per side: fees Rs65.8 = 0.329R (brokerage alone 0.200R)
+   premium Rs20,000 per side: fees Rs84.4 = 0.422R (brokerage alone 0.200R)
+General formula: cost_R = round_trip_cost_% / stop_distance_%  (e.g. 0.10% round trip / 0.5% stop = 0.2R)
+
+====================================================================================================
+B. P(stop is tripped) by stop definition and size (Rs2,000 = 10R at Rs200 risk; = 20R at Rs100 risk; = 13.3R at Rs150)   [t=0s]
+====================================================================================================
+W=2.0 E=+0.00 n=100: peak-to-trough DD>= 10R 0.851 13.3R 0.591 15R 0.529 20R 0.276 | loss-from-start>= 10R 0.478 13.3R 0.317 15R 0.286 20R 0.149
+W=2.0 E=+0.00 n=200: peak-to-trough DD>= 10R 0.984 13.3R 0.870 15R 0.828 20R 0.592 | loss-from-start>= 10R 0.617 13.3R 0.484 15R 0.449 20R 0.313
+W=2.0 E=+0.10 n=100: peak-to-trough DD>= 10R 0.705 13.3R 0.372 15R 0.312 20R 0.119 | loss-from-start>= 10R 0.263 13.3R 0.139 15R 0.118 20R 0.046
+W=2.0 E=+0.10 n=200: peak-to-trough DD>= 10R 0.927 13.3R 0.663 15R 0.586 20R 0.301 | loss-from-start>= 10R 0.323 13.3R 0.200 15R 0.175 20R 0.093
+W=2.0 E=+0.20 n=100: peak-to-trough DD>= 10R 0.516 13.3R 0.206 15R 0.160 20R 0.042 | loss-from-start>= 10R 0.120 13.3R 0.050 15R 0.039 20R 0.011
+W=2.0 E=+0.20 n=200: peak-to-trough DD>= 10R 0.796 13.3R 0.407 15R 0.335 20R 0.112 | loss-from-start>= 10R 0.139 13.3R 0.062 15R 0.050 20R 0.019
+W=2.0 E=+0.30 n=100: peak-to-trough DD>= 10R 0.347 13.3R 0.096 15R 0.070 20R 0.012 | loss-from-start>= 10R 0.053 13.3R 0.016 15R 0.011 20R 0.002
+W=2.0 E=+0.30 n=200: peak-to-trough DD>= 10R 0.606 13.3R 0.211 15R 0.155 20R 0.033 | loss-from-start>= 10R 0.057 13.3R 0.017 15R 0.012 20R 0.003
+W=1.2 E=+0.00 n=100: peak-to-trough DD>= 10R 0.638 13.3R 0.387 15R 0.296 20R 0.113 | loss-from-start>= 10R 0.345 13.3R 0.210 15R 0.160 20R 0.063
+W=1.2 E=+0.00 n=200: peak-to-trough DD>= 10R 0.897 13.3R 0.702 15R 0.606 20R 0.350 | loss-from-start>= 10R 0.503 13.3R 0.372 15R 0.320 20R 0.185
+W=1.2 E=+0.10 n=100: peak-to-trough DD>= 10R 0.361 13.3R 0.152 15R 0.098 20R 0.022 | loss-from-start>= 10R 0.120 13.3R 0.053 15R 0.036 20R 0.009
+W=1.2 E=+0.10 n=200: peak-to-trough DD>= 10R 0.634 13.3R 0.336 15R 0.239 20R 0.077 | loss-from-start>= 10R 0.154 13.3R 0.081 15R 0.059 20R 0.019
+W=1.2 E=+0.20 n=100: peak-to-trough DD>= 10R 0.159 13.3R 0.043 15R 0.023 20R 0.003 | loss-from-start>= 10R 0.029 13.3R 0.009 15R 0.004 20R 0.001
+W=1.2 E=+0.20 n=200: peak-to-trough DD>= 10R 0.317 13.3R 0.100 15R 0.057 20R 0.010 | loss-from-start>= 10R 0.032 13.3R 0.010 15R 0.006 20R 0.001
+W=1.2 E=+0.30 n=100: peak-to-trough DD>= 10R 0.050 13.3R 0.008 15R 0.003 20R 0.000 | loss-from-start>= 10R 0.005 13.3R 0.001 15R 0.000 20R 0.000
+W=1.2 E=+0.30 n=200: peak-to-trough DD>= 10R 0.110 13.3R 0.019 15R 0.008 20R 0.001 | loss-from-start>= 10R 0.005 13.3R 0.001 15R 0.000 20R 0.000
+
+====================================================================================================
+C. SPRT H0 mu=0 vs H1 mu=+0.2R (alpha .05, beta .20, n_min 50, n_max 300) under different capital-stop rules   [t=6s]
+====================================================================================================
+W=2.0 sigma=1.47 stop=none
+   E=+0.00: PASS=0.031 FAIL=0.850 STOP=0.000 UNDECIDED=0.119 avg n=136
+   E=+0.10: PASS=0.212 FAIL=0.484 STOP=0.000 UNDECIDED=0.303 avg n=189
+   E=+0.20: PASS=0.615 FAIL=0.166 STOP=0.000 UNDECIDED=0.219 avg n=185
+   E=+0.30: PASS=0.910 FAIL=0.039 STOP=0.000 UNDECIDED=0.051 avg n=141
+W=2.0 sigma=1.47 stop=start 10R
+   E=+0.00: PASS=0.030 FAIL=0.435 STOP=0.428 UNDECIDED=0.107 avg n=122
+   E=+0.10: PASS=0.204 FAIL=0.274 STOP=0.238 UNDECIDED=0.285 avg n=175
+   E=+0.20: PASS=0.588 FAIL=0.087 STOP=0.115 UNDECIDED=0.210 avg n=176
+   E=+0.30: PASS=0.887 FAIL=0.013 STOP=0.052 UNDECIDED=0.048 avg n=136
+W=2.0 sigma=1.47 stop=peak 10R
+   E=+0.00: PASS=0.016 FAIL=0.003 STOP=0.980 UNDECIDED=0.001 avg n=57
+   E=+0.10: PASS=0.095 FAIL=0.002 STOP=0.899 UNDECIDED=0.004 avg n=76
+   E=+0.20: PASS=0.309 FAIL=0.000 STOP=0.686 UNDECIDED=0.005 avg n=91
+   E=+0.30: PASS=0.580 FAIL=0.000 STOP=0.419 UNDECIDED=0.001 avg n=92
+W=2.0 sigma=1.47 stop=peak 20R
+   E=+0.00: PASS=0.033 FAIL=0.681 STOP=0.197 UNDECIDED=0.089 avg n=129
+   E=+0.10: PASS=0.216 FAIL=0.374 STOP=0.173 UNDECIDED=0.237 avg n=178
+   E=+0.20: PASS=0.605 FAIL=0.128 STOP=0.083 UNDECIDED=0.184 avg n=179
+   E=+0.30: PASS=0.901 FAIL=0.034 STOP=0.020 UNDECIDED=0.045 avg n=139
+W=1.2 sigma=1.10 stop=none
+   E=+0.00: PASS=0.043 FAIL=0.932 STOP=0.000 UNDECIDED=0.025 avg n=85
+   E=+0.10: PASS=0.303 FAIL=0.588 STOP=0.000 UNDECIDED=0.109 avg n=131
+   E=+0.20: PASS=0.769 FAIL=0.183 STOP=0.000 UNDECIDED=0.048 avg n=122
+   E=+0.30: PASS=0.963 FAIL=0.035 STOP=0.000 UNDECIDED=0.002 avg n=86
+W=1.2 sigma=1.10 stop=start 10R
+   E=+0.00: PASS=0.042 FAIL=0.934 STOP=0.000 UNDECIDED=0.024 avg n=84
+   E=+0.10: PASS=0.306 FAIL=0.587 STOP=0.000 UNDECIDED=0.107 avg n=131
+   E=+0.20: PASS=0.772 FAIL=0.179 STOP=0.000 UNDECIDED=0.049 avg n=123
+   E=+0.30: PASS=0.962 FAIL=0.036 STOP=0.000 UNDECIDED=0.002 avg n=86
+W=1.2 sigma=1.10 stop=peak 10R
+   E=+0.00: PASS=0.038 FAIL=0.565 STOP=0.390 UNDECIDED=0.008 avg n=73
+   E=+0.10: PASS=0.268 FAIL=0.314 STOP=0.381 UNDECIDED=0.036 avg n=108
+   E=+0.20: PASS=0.698 FAIL=0.109 STOP=0.174 UNDECIDED=0.019 avg n=109
+   E=+0.30: PASS=0.928 FAIL=0.026 STOP=0.045 UNDECIDED=0.001 avg n=83
+W=1.2 sigma=1.10 stop=peak 20R
+   E=+0.00: PASS=0.041 FAIL=0.934 STOP=0.002 UNDECIDED=0.023 avg n=85
+   E=+0.10: PASS=0.307 FAIL=0.584 STOP=0.001 UNDECIDED=0.107 avg n=131
+   E=+0.20: PASS=0.772 FAIL=0.180 STOP=0.000 UNDECIDED=0.048 avg n=123
+   E=+0.30: PASS=0.960 FAIL=0.038 STOP=0.000 UNDECIDED=0.002 avg n=86
+
+====================================================================================================
+D. Harvey-Liu style haircut of an observed mean R for K tested variants (Bonferroni p-adjust), and BH/Holm thresholds   [t=19s]
+====================================================================================================
+T=400 obs mean=0.2R SD=1.45 t=2.76 p=0.0029 :: K=1: p_adj=0.0029 haircut mean=0.200R (-0% cut) | K=5: p_adj=0.0145 haircut mean=0.158R (21% cut) | K=10: p_adj=0.0290 haircut mean=0.137R (31% cut) | K=20: p_adj=0.0580 haircut mean=0.114R (43% cut) | K=50: p_adj=0.1451 haircut mean=0.077R (62% cut) | K=100: p_adj=0.2902 haircut mean=0.040R (80% cut)
+T=400 obs mean=0.15R SD=1.45 t=2.07 p=0.0193 :: K=1: p_adj=0.0193 haircut mean=0.150R (-0% cut) | K=5: p_adj=0.0964 haircut mean=0.094R (37% cut) | K=10: p_adj=0.1927 haircut mean=0.063R (58% cut) | K=20: p_adj=0.3855 haircut mean=0.021R (86% cut) | K=50: p_adj=0.9637 haircut mean=0.000R (100% cut) | K=100: p_adj=1.0000 haircut mean=0.000R (100% cut)
+T=1000 obs mean=0.1R SD=1.25 t=2.53 p=0.0057 :: K=1: p_adj=0.0057 haircut mean=0.100R (0% cut) | K=5: p_adj=0.0285 haircut mean=0.075R (25% cut) | K=10: p_adj=0.0571 haircut mean=0.062R (38% cut) | K=20: p_adj=0.1141 haircut mean=0.048R (52% cut) | K=50: p_adj=0.2853 haircut mean=0.022R (78% cut) | K=100: p_adj=0.5706 haircut mean=0.000R (100% cut)
+T=200 obs mean=0.25R SD=1.25 t=2.83 p=0.0023 :: K=1: p_adj=0.0023 haircut mean=0.250R (-0% cut) | K=5: p_adj=0.0117 haircut mean=0.200R (20% cut) | K=10: p_adj=0.0234 haircut mean=0.176R (30% cut) | K=20: p_adj=0.0468 haircut mean=0.148R (41% cut) | K=50: p_adj=0.1169 haircut mean=0.105R (58% cut) | K=100: p_adj=0.2339 haircut mean=0.064R (74% cut)
+Holm step-down: sort p ascending; reject p_(i) while p_(i) <= alpha/(K-i+1). BH (FDR q): largest i with p_(i) <= i*q/K; reject 1..i.
+
+====================================================================================================
+E. Effective sample size when flags cluster on the same day (design effect 1+(m-1)*rho)   [t=19s]
+====================================================================================================
+   avg flags/day m=1 intra-day correlation rho=0.0: design effect=1.00 -> 100 trades worth 100 independent trades
+   avg flags/day m=1 intra-day correlation rho=0.1: design effect=1.00 -> 100 trades worth 100 independent trades
+   avg flags/day m=1 intra-day correlation rho=0.2: design effect=1.00 -> 100 trades worth 100 independent trades
+   avg flags/day m=1 intra-day correlation rho=0.3: design effect=1.00 -> 100 trades worth 100 independent trades
+   avg flags/day m=2 intra-day correlation rho=0.0: design effect=1.00 -> 100 trades worth 100 independent trades
+   avg flags/day m=2 intra-day correlation rho=0.1: design effect=1.10 -> 100 trades worth 91 independent trades
+   avg flags/day m=2 intra-day correlation rho=0.2: design effect=1.20 -> 100 trades worth 83 independent trades
+   avg flags/day m=2 intra-day correlation rho=0.3: design effect=1.30 -> 100 trades worth 77 independent trades
+   avg flags/day m=3 intra-day correlation rho=0.0: design effect=1.00 -> 100 trades worth 100 independent trades
+   avg flags/day m=3 intra-day correlation rho=0.1: design effect=1.20 -> 100 trades worth 83 independent trades
+   avg flags/day m=3 intra-day correlation rho=0.2: design effect=1.40 -> 100 trades worth 71 independent trades
+   avg flags/day m=3 intra-day correlation rho=0.3: design effect=1.60 -> 100 trades worth 62 independent trades
+   avg flags/day m=5 intra-day correlation rho=0.0: design effect=1.00 -> 100 trades worth 100 independent trades
+   avg flags/day m=5 intra-day correlation rho=0.1: design effect=1.40 -> 100 trades worth 71 independent trades
+   avg flags/day m=5 intra-day correlation rho=0.2: design effect=1.80 -> 100 trades worth 56 independent trades
+   avg flags/day m=5 intra-day correlation rho=0.3: design effect=2.20 -> 100 trades worth 45 independent trades
+
+DONE in 19s
