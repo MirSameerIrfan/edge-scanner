@@ -240,7 +240,7 @@ SEBI's "education" carve-out bans recent price data. From Jan 2025 that meant **
 
 ### Cited Findings
 **Research Analyst and Investment Adviser rules**
-- **[2024–25] RA rules:** SEBI notified the **SEBI (Research Analysts) (Third Amendment) Regulations, 2024 on 16 Dec 2024**, effective on publication in the Gazette — [SCC Online](https://www.scconline.com/blog/post/2024/12/19/sebi-research-analyst-third-amendment-regulations-2024/). The related IA amendments are dated about 17 Dec — [AZB & Partners](https://www.azbpartners.com/bank/overhaul-of-the-regulatory-framework-for-investment-advisers-and-research-analysts/).
+- **[2024–25] RA rules:** SEBI notified the **SEBI (Research Analysts) (Third Amendment) Regulations, 2024 on 16 Dec 2024**, effective on publication in the Gazette — [SCC Online](https://www.scconline.com/blog/post/2024/12/19/sebi-research-analyst-third-amendment-regulations-2024/). The Investment Adviser rules were overhauled alongside them — [AZB & Partners](https://www.azbpartners.com/bank/overhaul-of-the-regulatory-framework-for-investment-advisers-and-research-analysts/). Some sources date the IA amendment 17 Dec 2024.
 - Under the amended rules:
   - part-time RAs are capped at **75 clients** at any time (Reg. 13(iv));
   - **new Reg. 19(vii) requires RAs to disclose how far they use AI tools**, at the time of entering an agreement;
@@ -357,7 +357,7 @@ SEBI's "education" carve-out bans recent price data. From Jan 2025 that meant **
 - Corporate-action adjustments:
   - Zerodha (Aug 2025): Kite Connect historical prices "are adjusted for corporate actions such as bonuses, stock splits, rights issues, spin-offs, and extraordinary dividends" — [Zerodha on X](https://x.com/zerodha/status/1952292763929874868).
   - A **Sep 2026** staff reply repeats this (extraordinary dividends meaning those above 2%) and says **Kite Connect offers no unadjusted price-and-volume series** — [Kite forum 16280](https://kite.trade/forum/discussion/16280/historical-5-minute-api-data-corporate-action-price-and-volume-adjustments).
-  - Older caveats: a 2020 reply said very old data was adjusted only in **day** candles, not intraday, and intraday adjustment for all contracts was not applied **before 2019**. A 2023 reply said only splits and bonuses were adjusted. Adjustments were historically applied weekly — [Kite forum 5004](https://kite.trade/forum/discussion/5004/is-historical-data-corporate-action-adjusted-upto-the-current-date-at-any-time).
+  - Older caveats: a 2020 reply said very old data was adjusted only in **day** candles, not intraday, and intraday adjustment for all contracts was not applied **before 2019**. A 2023 reply said only splits and bonuses were adjusted. Adjustments were historically applied weekly — [Kite forum 5004](https://kite.trade/forum/discussion/5004/is-historical-data-corporate-action-adjusted-upto-the-current-date-at-any-time); [Kite forum 4014](https://kite.trade/forum/discussion/4014/is-historical-data-dividend-adjusted) (which thread holds which reply was not visible in the extracts).
   - A Nov 2025 user found Kite's OHLC consistently higher than TradingView's adjusted data, and Zerodha attributed this to different methods — [Kite forum 15250](https://kite.trade/forum/discussion/15250/adjusted-histroical-data).
 
 **Rate limits and order caps**
