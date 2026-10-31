@@ -1,0 +1,23 @@
+MinBTL (years) for E[maxSR]=1 annual, N=10: 2.48   (2lnN upper bound: 4.61)
+MinBTL (years) for E[maxSR]=1 annual, N=20: 3.61   (2lnN upper bound: 5.99)
+MinBTL (years) for E[maxSR]=1 annual, N=45: 5.00   (2lnN upper bound: 7.61)
+MinBTL (years) for E[maxSR]=1 annual, N=100: 6.40   (2lnN upper bound: 9.21)
+MinBTL (years) for E[maxSR]=1 annual, N=1000: 10.60   (2lnN upper bound: 13.82)
+K_max ~ exp(T*d^2/(8*s^2)) keeps expected best-of-K luck <= d/2 (s=1.25R):
+  T=300 d=0.1: Kmax~1.3; check luck at K=2: 0.038R vs d/2=0.05
+  T=300 d=0.2: Kmax~2.6; check luck at K=2: 0.038R vs d/2=0.1
+  T=500 d=0.1: Kmax~1.5; check luck at K=2: 0.029R vs d/2=0.05
+  T=500 d=0.2: Kmax~5.0; check luck at K=4: 0.059R vs d/2=0.1
+  T=750 d=0.1: Kmax~1.8; check luck at K=2: 0.024R vs d/2=0.05
+  T=750 d=0.2: Kmax~11.0; check luck at K=11: 0.074R vs d/2=0.1
+  T=1000 d=0.1: Kmax~2.2; check luck at K=2: 0.021R vs d/2=0.05
+  T=1000 d=0.2: Kmax~24.5; check luck at K=24: 0.078R vs d/2=0.1
+  T=1500 d=0.1: Kmax~3.3; check luck at K=3: 0.028R vs d/2=0.05
+  T=1500 d=0.2: Kmax~121.5; check luck at K=121: 0.084R vs d/2=0.1
+  T=2000 d=0.1: Kmax~5.0; check luck at K=4: 0.029R vs d/2=0.05
+  T=2000 d=0.2: Kmax~601.8; check luck at K=601: 0.087R vs d/2=0.1
+SPRT sigma=1.0: PASS cumR>=13.86+0.1n (Rs2,773+Rs20n); FAIL cumR<=-7.79+0.1n (Rs-1,558+Rs20n); at n=100/200/300 pass mean>=0.239/0.169/0.146, fail mean<=0.022/0.061/0.074
+SPRT sigma=1.1: PASS cumR>=16.77+0.1n (Rs3,355+Rs20n); FAIL cumR<=-9.43+0.1n (Rs-1,885+Rs20n); at n=100/200/300 pass mean>=0.268/0.184/0.156, fail mean<=0.006/0.053/0.069
+SPRT sigma=1.25: PASS cumR>=21.66+0.1n (Rs4,332+Rs20n); FAIL cumR<=-12.17+0.1n (Rs-2,435+Rs20n); at n=100/200/300 pass mean>=0.317/0.208/0.172, fail mean<=-0.022/0.039/0.059
+SPRT sigma=1.47: PASS cumR>=29.96+0.1n (Rs5,991+Rs20n); FAIL cumR<=-16.83+0.1n (Rs-3,367+Rs20n); at n=100/200/300 pass mean>=0.400/0.250/0.200, fail mean<=-0.068/0.016/0.044
+infinite-horizon P(down 10R from start) exp(-2muD/s^2): ['mu=0.1,s=1.1: 0.191', 'mu=0.2,s=1.1: 0.037', 'mu=0.1,s=1.45: 0.386', 'mu=0.2,s=1.47: 0.157', 'mu=0.3,s=1.49: 0.067']
