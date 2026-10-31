@@ -29,7 +29,7 @@ SEBI released the study on **24 July 2024**, not July 2023 as the brief says. It
 ## 2. SEBI's F&O studies (2023 to 2026), the post-October-2024 measures, and whether F&O is feasible at ₹20,000 with ₹200 risk
 
 ### Takeaway
-SEBI's studies show 85–93% of individual F&O traders losing money every year:
+SEBI's studies show 88–93% of individual F&O traders losing money every year:
 - **89%** in FY22 (study of Jan 2023)
 - **93%** over FY22–FY24 (Sept 2024)
 - about **91%** in FY25 (July 2025)
@@ -103,6 +103,7 @@ These are my calculations, using Nifty at 23,053, a lot of 65, and the charges l
 ### Gaps
 - None of the primary SEBI PDFs could be fetched. Detailed breakdowns from the 2026 study (by contracts traded, index vs stock, intraday vs expiry-day) are missing.
 - The reported May 2026 SEBI circular and the 7 Dec 2026 VWAP-settlement change are unverified.
+- The other October 2024 measures named in the brief were not separately confirmed in this session's search results. These are upfront collection of option premium, intraday monitoring of position limits, an extra extreme-loss margin (ELM) on short options on expiry day, and removal of the calendar-spread benefit on expiry day. Only the ₹15 lakh minimum contract size and one weekly expiry per exchange were confirmed.
 - Current exchange SPAN plus exposure margin for a Nifty lot at 23,053 is unverified. The ₹1.6–2.4 lakh figure is a blog estimate for a contract worth about ₹16 lakh.
 - I could not confirm whether the semi-annual review has changed the Nifty lot from 65 since January 2026. At 23,053, 65 units is just under ₹15 lakh.
 
@@ -249,7 +250,11 @@ Almost none of this evidence is at the "days to a couple of weeks" horizon of cl
 
 ### Inferences
 - **Horizon mismatch:** The robust Indian evidence (momentum, 52-week high) is at **monthly to semi-annual** rebalancing and holding periods. That is "positional", not "days to weeks" swing trading. Swing setups coded from the intraday books (Gujral & Vaidya, Aziz) have **no published Indian evidence base** that I found.
-- **Gap between paper returns and this account:** Index CAGR figures are gross of retail costs. Following monthly a concentrated 5–10-stock momentum or 52-week-high portfolio with ₹20,000 costs about 0.6–1.0% per round trip per name (section 3). If about half the portfolio turns over at each rebalance, that is a few percent a year: material against an excess return of about 5 points a year (18.8% vs 13.9%), but not fatal. A 30-name copy at about 2.5% per round trip, or high-frequency swing trading of the same signals, would consume most of the premium.
+- **Gap between paper returns and this account:** Index CAGR figures are gross of retail costs. A concentrated 5–10-stock momentum or 52-week-high portfolio on ₹20,000 costs about 0.6–1.0% per round trip per name (section 3). Annual cost is roughly monthly turnover × that round-trip cost × 12:
+  - Monthly rebalancing with 25–50% turnover costs about **2–6% a year**, comparable to the index's excess return of about 5 points (18.8% vs 13.9%). It could consume most of the premium.
+  - Semi-annual rebalancing, as in the NSE index, with about 50% turnover twice a year costs about 0.6–1.0% a year.
+  - A 30-name copy (about 2.5% per round trip) or rapid swing trading of the same signals would consume the premium.
+  Slower rebalancing is therefore much better suited to this account.
 - **Positional drawdowns versus the trial stop:** Momentum's historical drawdowns of 34–70% at index level mean a concentrated momentum portfolio could plausibly breach the trial's ₹2,000 (10%) drawdown stop in an ordinary momentum crash or correction. The 10R stop is tighter than the strategy's normal drawdowns. The 1-year return to June 2026 was negative.
 - **Signals worth testing as swing entries with daily data:**
   - 52-week-high proximity or breakout within a momentum-ranked universe.
