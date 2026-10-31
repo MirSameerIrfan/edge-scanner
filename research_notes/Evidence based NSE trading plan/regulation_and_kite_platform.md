@@ -97,7 +97,7 @@ Retail investors may short-sell, intraday included. Naked short selling is banne
 
   | Phase | Share of peak margin required |
   |---|---|
-  | From 1 Dec 2020 | 25% |
+  | From 1 Dec 2020 | 25% (from prior knowledge; not in the extracts, **[unverified]**) |
   | Next phase | 50% |
   | June 2021 | 75% |
   | From 1 Sep 2021 | 100% |

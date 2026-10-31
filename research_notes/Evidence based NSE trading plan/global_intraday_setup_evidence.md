@@ -229,7 +229,7 @@ The gross patterns largely replicate; the net edges largely do not.
 
 ### Inferences
 - **The academic intraday-momentum effect is an index effect in the last 30 minutes that depends on volatility and gamma.** It is not a single-stock opening-breakout effect.
-  - On NSE, the natural analog is Nifty or Bank Nifty timing in the last half-hour (14:59–15:29 IST). NSE's very large index-options market makes the gamma-hedging channel plausible, and the Motwani et al. study points the same way.
+  - On NSE, the natural analog is Nifty or Bank Nifty timing in the last half-hour (15:00–15:30 IST). NSE's very large index-options market makes the gamma-hedging channel plausible, and the Motwani et al. study points the same way.
   - Implementing it needs index futures or options, or an ETF where costs relative to small moves are severe. Index-futures lot sizes are likely far beyond a ₹20,000 account (verify).
 - **Gap trading.** The stock-level literature on average favours fading overnight moves, especially large ones. Aziz-style "gap-and-go" momentum therefore stands against the base rate. Any continuation edge would have to come from conditioning on catalyst and extreme relative volume, which is Paper B's claim, and that claim lacks independent replication.
 - **Survival after costs.** Index momentum survives only at institutional costs (around 0.4 bps per round trip on futures). Retail cash-equity costs in India, roughly 8–11 bps per round trip before slippage (see Q6), are 20 or more times the per-trade edge of a few bps found in the SPY studies.
@@ -341,7 +341,7 @@ The edges with documented results rest on several US-specific supports:
 - premarket information (the NQ 09:25 filter);
 - a dealer-gamma channel in US index options and leveraged ETFs.
 
-On NSE, percentage-based taxes and brokerage make costs measured in R roughly ten times larger for the same tight stop. For a ₹200 R with a 10%-ATR-style stop, friction alone is about 0.3–0.8R per trade, larger than any replicated gross edge (0.07–0.13R). Tight-stop intraday setups from these papers are therefore very unlikely to be net-profitable for this account.
+On NSE, percentage-based taxes and brokerage make costs measured in R roughly ten times larger for the same tight stop. For a ₹200 R with a 10%-ATR-style stop, charges alone are about 0.3–0.45R per trade, and about 0.5–0.8R once realistic slippage is added. That is larger than any replicated gross edge (0.07–0.13R). Tight-stop intraday setups from these papers are therefore very unlikely to be net-profitable for this account.
 
 ### Cited Findings
 - **The stocks-in-play edge comes from top-20 relative-volume selection** out of about 7,000 US stocks with price above $5, ATR above $0.50 and average volume of at least 1M shares — [Tradoki](https://blog.tradoki.com/posts/opening-range-breakout-stocks-in-play-research); [paper copy](https://www.researchgate.net/publication/379003745_A_Profitable_Day_Trading_Strategy_For_The_US_Equity_Market) (per search summary).
